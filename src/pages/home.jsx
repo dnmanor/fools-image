@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Menu from "../components/header/header";
 import { Search } from "baseui/icon";
 import { getAntonyms } from "../utils/words";
 import { searchImages } from "../utils/api";
@@ -11,12 +10,6 @@ const Home = () => {
   const [keyword, setKeyword] = React.useState("");
   const [pics, setPics] = useState([]);
 
-  const itemProps = {
-    height: "scale1000",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  };
   const handleClick = async () => {
     const response = await getAntonyms(keyword);
     const searchTerm = response[0];
@@ -28,7 +21,6 @@ const Home = () => {
 
   return (
     <div>
-      <Menu />
       <React.Fragment>
         <Input
         overrides={{Root:{style:{
