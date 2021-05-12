@@ -5,8 +5,8 @@ import MyPic from '../assets/myp.jpeg'
 
 const Me = () => {
   return (
-    <div style={{padding: '50px', alignContent: 'center', textAlign: 'center'}}>
-        <img src={MyPic} alt="my-pic" style={{height: '40vh'}}/>
+    <div style={{padding: '30px', alignContent: 'center', textAlign: 'center'}}>
+        <img src={MyPic} alt="my-pic" style={{height: '35vh'}}/>
       <Display1>🙄Yup, this dude. Lmao,</Display1>
       <Display3>
         I thought of this in the shower a night before April Fool's Day but here
