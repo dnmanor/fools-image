@@ -20,10 +20,10 @@ const Menu = () => {
       <StyledNavigationList $align={ALIGN.center} />
       <StyledNavigationList $align={ALIGN.right}>
         <StyledNavigationItem>
-          <StyledLink href="#basic-link1">Who built it?</StyledLink>
+          <StyledLink href="/who">Who built it?</StyledLink>
         </StyledNavigationItem>
         <StyledNavigationItem>
-          <StyledLink href="#basic-link2">Why does this exist?</StyledLink>
+          <StyledLink href="/why">Why does this exist?</StyledLink>
         </StyledNavigationItem>
       </StyledNavigationList>
       <StyledNavigationList $align={ALIGN.right}>
