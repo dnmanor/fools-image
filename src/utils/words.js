@@ -25,7 +25,7 @@ export const getAntonyms = async (word) => {
       throw new Error("No antonyms exist for this word");
     }
 
-    console.log(antonyms);
+    // console.log(antonyms);
 
     return antonyms;
   } catch (error) {
