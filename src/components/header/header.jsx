@@ -7,12 +7,15 @@ import {
 } from "baseui/header-navigation";
 import { StyledLink } from "baseui/link";
 import { Button } from "baseui/button";
+import { Link } from "react-router-dom";
 
 const Menu = () => {
   return (
     <HeaderNavigation>
       <StyledNavigationList $align={ALIGN.left}>
-        <StyledNavigationItem>Fool's Image</StyledNavigationItem>
+        <Link to="/" style={{textDecoration: 'none', color: 'black'}}>
+          <StyledNavigationItem>Fool's Image</StyledNavigationItem>
+        </Link>
       </StyledNavigationList>
       <StyledNavigationList $align={ALIGN.center} />
       <StyledNavigationList $align={ALIGN.right}>
