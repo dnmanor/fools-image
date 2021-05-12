@@ -10,11 +10,11 @@ const Home = () => {
   //   const [pics, setPics] = useState([]);
 
   const handleClick = async () => {
-    
     const response = await getAntonyms(keyword);
     const searchTerm = response[0];
-    console.log(searchTerm);
-    await searchImages(searchTerm);
+    // console.log(searchTerm);
+    const images = await searchImages(searchTerm);
+    // console.log(images);
   };
 
   return (
@@ -25,7 +25,7 @@ const Home = () => {
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
           placeholder="Search a picture"
-          endEnhancer={<Search size="18px" onClick={handleClick}/>}
+          endEnhancer={<Search size="18px" onClick={handleClick} />}
           clearable
         />
       </React.Fragment>
