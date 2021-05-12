@@ -8,7 +8,7 @@ const unsplash = createApi({
 export const searchImages = async (query) => {
   try {
     const result = await unsplash.search.getPhotos({
-      query: "cat",
+      query: `${query}`,
       page: 1,
       perPage: 10,
     });
