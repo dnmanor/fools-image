@@ -5,25 +5,24 @@ const unsplash = createApi({
   accessKey: APP_ACCESS_KEY,
 });
 
-export const searchImages = (query) => {
-    unsplash.search.getPhotos({
+export const searchImages = async (query) => {
+  try {
+    const result = await unsplash.search.getPhotos({
       query: "cat",
       page: 1,
       perPage: 10,
-    })
-    .then((result) => {
-      if (result.errors) {
-        // handle error here
-        console.log("error occurred: ", result.errors[0]);
-      } else {
-        const feed = result.response;
-
-        // extract total and results array from response
-        const { total, results } = feed;
-
-        // handle success here
-        console.log(`received ${results.length} photos out of ${total}`);
-        console.log("first photo: ", results[0]);
-      }
     });
+    const feed = result.response;
+    const { total, results } = feed;
+
+    if (result.errors) {
+      // handle error here
+      console.log("error occurred: ", result.errors[0]);
+    }
+
+    return results
+
+  } catch (error) {
+    return error;
+  }
 };
