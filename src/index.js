@@ -5,16 +5,19 @@ import App from "./App";
 import { Client as Styletron } from "styletron-engine-atomic";
 import { Provider as StyletronProvider } from "styletron-react";
 import { LightTheme, BaseProvider, styled } from "baseui";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const engine = new Styletron();
 
 ReactDOM.render(
-  <StyletronProvider value={engine}>
-    <BaseProvider theme={LightTheme}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </BaseProvider>
-  </StyletronProvider>,
+  <Router>
+    <StyletronProvider value={engine}>
+      <BaseProvider theme={LightTheme}>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </BaseProvider>
+    </StyletronProvider>
+  </Router>,
   document.getElementById("root")
 );
