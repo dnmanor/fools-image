@@ -31,24 +31,37 @@ const Home = () => {
       <Menu />
       <React.Fragment>
         <Input
+        overrides={{Root:{style:{
+          width: '60%',
+          margin: '2% 20%'
+        }}}}
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
           placeholder="Search a picture"
-          endEnhancer={<Search size="18px" onClick={handleClick} />}
+          endEnhancer={
+            <Search
+              size="18px"
+              onClick={handleClick}
+            />
+          }
           clearable
         />
-      </React.Fragment>
+      </React.Fragment >
+      <div style={{padding: '30px'}}>
       <FlexGrid
         flexGridColumnCount={[1, 2, 4]}
         flexGridColumnGap="scale800"
         flexGridRowGap="scale800"
+        
       >
         {pics.map((pic) => (
           <FlexGridItem>
-            <ImageCard Image={pic.urls.full} name={pic.description}/>;
+            <ImageCard Image={pic.urls.full} credit={pic.user.name} />;
           </FlexGridItem>
         ))}
       </FlexGrid>
+      </div>
+     
     </div>
   );
 };
