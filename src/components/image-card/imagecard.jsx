@@ -2,22 +2,17 @@ import * as React from "react";
 import { Card, StyledAction } from "baseui/card";
 import { Button } from "baseui/button";
 
-export default function ImageCard({Image, name}) {
+export default function ImageCard({ Image, credit }) {
   return (
     <Card
-      overrides={{ Root: { style: { width: "90%", margin: '10px' } } }}
+      overrides={{
+        Root: { style: { width: "90%" } },
+      }}
       headerImage={Image}
-      title={name}
-    //   alt={pic.alt_description}
-    //   src={pic.urls.full}
-    //   width="50%"
-    //   height="50%"
     >
-      <StyledAction>
-        <Button overrides={{ BaseButton: { style: { width: "100%" } } }}>
-         View
-        </Button>
-      </StyledAction>
+      <span>
+        <h3>Credit: </h3> <p>{credit}</p>
+      </span>
     </Card>
   );
 }
