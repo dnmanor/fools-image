@@ -13,7 +13,9 @@ export const searchImages = async (query) => {
       perPage: 10,
     });
     const feed = result.response;
-    const { total, results } = feed;
+
+    //dont forget to destructure the total as well when you need it
+    const { results } = feed;
 
     if (result.errors) {
       // handle error here

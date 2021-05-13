@@ -1,6 +1,5 @@
 import * as React from "react";
-import { Card, StyledAction } from "baseui/card";
-import { Button } from "baseui/button";
+import { Card } from "baseui/card";
 
 export default function ImageCard({ Image, credit }) {
   return (
